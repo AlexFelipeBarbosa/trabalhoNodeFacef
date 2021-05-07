@@ -1,0 +1,15 @@
+{
+  "name": "node_facef",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AlexFelipeBarbosa/trabalhoNodeFacef.git",
+  "author": "Alex Barbosa <alexfelipebarbosa@yahoo.com.br>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "typescript": "^4.2.4"
+  }
+}
