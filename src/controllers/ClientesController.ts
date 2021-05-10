@@ -34,6 +34,22 @@ class ClientesController {
       });
     }
   }
+
+  async findByEmail(request: Request, response: Response) {
+    const { email } = request.params;
+
+    const clientesService = new ClientesService();
+
+    try {
+      const cliente = await clientesService.findByEmail(email);
+
+      return response.json(cliente);
+    } catch (error) {
+      return response.status(404).json({
+        message: error.message,
+      });
+    }
+  }
 }
 
 export { ClientesController };

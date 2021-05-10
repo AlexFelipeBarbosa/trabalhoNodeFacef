@@ -42,6 +42,17 @@ class ClientesService {
 
     return cliente;
   }
+
+  async findByEmail(email: string) {
+    const cliente = await this.clientesRepository.findOne({
+      email,
+    });
+
+    if (!cliente) {
+      throw new Error("Cliente não identificado!");
+    }
+    return cliente;
+  }
 }
 
 export { ClientesService };
