@@ -1,6 +1,6 @@
 import { getCustomRepository, Repository } from "typeorm";
 import { Cliente } from "../entities/Cliente";
-import { ClientesRepository } from "../repositories/ClientesRepositoty";
+import { ClientesRepository } from "../repositories/ClientesRepository";
 
 interface IClientes {
   idCliente: number;
@@ -40,6 +40,31 @@ class ClientesService {
 
     await this.clientesRepository.save(cliente);
 
+    return cliente;
+  }
+
+  async findByEmail(email: string) {
+    const cliente = await this.clientesRepository.findOne({
+      email,
+    });
+
+    if (!cliente) {
+      throw new Error("Cliente não identificado!");
+    }
+    return cliente;
+  }
+
+  async findByID(idCliente: number) {
+    console.log("Passei aqui!");
+    const cliente = await this.clientesRepository.findOne({
+      idCliente,
+    });
+
+    console.log("Id: " + cliente);
+
+    if (!cliente) {
+      throw new Error("Cliente não identificado!");
+    }
     return cliente;
   }
 }

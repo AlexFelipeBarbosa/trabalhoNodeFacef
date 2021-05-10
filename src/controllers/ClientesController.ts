@@ -34,6 +34,40 @@ class ClientesController {
       });
     }
   }
+
+  async findByEmail(request: Request, response: Response) {
+    const { email } = request.params;
+
+    const clientesService = new ClientesService();
+
+    try {
+      const cliente = await clientesService.findByEmail(email);
+
+      return response.json(cliente);
+    } catch (error) {
+      return response.status(404).json({
+        message: error.message,
+      });
+    }
+  }
+
+  async findByID(request: Request, response: Response) {
+    console.log(request.params);
+    const { idCliente } = request.params;
+    const clientesService = new ClientesService();
+
+    console.log(request.params);
+
+    try {
+      const cliente = await clientesService.findByID(Number(idCliente));
+      console.log("Cliente");
+      return response.json(cliente);
+    } catch (error) {
+      return response.status(400).json({
+        message: error.message,
+      });
+    }
+  }
 }
 
 export { ClientesController };
