@@ -50,6 +50,24 @@ class ClientesController {
       });
     }
   }
+
+  async findByID(request: Request, response: Response) {
+    console.log(request.params);
+    const { idCliente } = request.params;
+    const clientesService = new ClientesService();
+
+    console.log(request.params);
+
+    try {
+      const cliente = await clientesService.findByID(Number(idCliente));
+      console.log("Cliente");
+      return response.json(cliente);
+    } catch (error) {
+      return response.status(400).json({
+        message: error.message,
+      });
+    }
+  }
 }
 
 export { ClientesController };
