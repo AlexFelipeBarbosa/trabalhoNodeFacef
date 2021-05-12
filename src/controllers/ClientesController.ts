@@ -25,7 +25,7 @@ class ClientesController {
         return response.status(201).json(cliente);
       } else {
         return response
-          .status(400)
+          .status(404)
           .json({ message: "Erro ao cadastrar um novo cliente!" });
       }
     } catch (error) {
