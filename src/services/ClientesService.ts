@@ -55,17 +55,36 @@ class ClientesService {
   }
 
   async findByID(idCliente: number) {
-    console.log("Passei aqui!");
     const cliente = await this.clientesRepository.findOne({
       idCliente,
     });
-
-    console.log("Id: " + cliente);
 
     if (!cliente) {
       throw new Error("Cliente não identificado!");
     }
     return cliente;
+  }
+
+  async update({ idCliente, nome, email, endereco, telefone }: IClientes) {
+    const cliente = await this.clientesRepository.findOne({
+      idCliente,
+    });
+
+    if (!cliente) {
+      throw new Error("Cliente não idenficado!!!");
+    }
+
+    cliente.nome = nome;
+    cliente.email = email;
+    cliente.endereco = endereco;
+    cliente.telefone = telefone;
+
+    await this.clientesRepository.save(cliente);
+
+    const clienteAtualizado = await this.clientesRepository.findOne({
+      idCliente,
+    });
+    return clienteAtualizado;
   }
 }
 

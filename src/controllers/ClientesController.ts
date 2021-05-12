@@ -36,7 +36,7 @@ class ClientesController {
   }
 
   async findByEmail(request: Request, response: Response) {
-    const { email } = request.params;
+    const { email } = request.body;
 
     const clientesService = new ClientesService();
 
@@ -52,18 +52,44 @@ class ClientesController {
   }
 
   async findByID(request: Request, response: Response) {
-    console.log(request.params);
     const { idCliente } = request.params;
     const clientesService = new ClientesService();
 
-    console.log(request.params);
-
     try {
       const cliente = await clientesService.findByID(Number(idCliente));
-      console.log("Cliente");
+
       return response.json(cliente);
     } catch (error) {
       return response.status(400).json({
+        message: error.message,
+      });
+    }
+  }
+
+  async update(request: Request, response: Response) {
+    const { idCliente } = request.params;
+    const { nome, email, endereco, telefone } = request.body;
+
+    const clientesService = new ClientesService();
+
+    try {
+      const cliente = await clientesService.update({
+        idCliente: Number(idCliente),
+        nome,
+        email,
+        endereco,
+        telefone,
+      });
+
+      if (cliente) {
+        return response.status(200).json(cliente);
+      } else {
+        return response.status(404).json({
+          message: "Erro ao realizar a atualização de Cliente!",
+        });
+      }
+    } catch (error) {
+      return response.status(404).json({
         message: error.message,
       });
     }
