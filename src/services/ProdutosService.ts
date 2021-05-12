@@ -45,6 +45,28 @@ class ProdutosService {
 
     return produto;
   }
+
+  async update({ idProduto, descricao, valor, estoque }: IProdutos) {
+    const produto = await this.produtosRepository.findOne({
+      idProduto,
+    });
+
+    if (!produto) {
+      throw new Error("Código de Produto não encontrado!");
+    }
+
+    produto.descricao = descricao;
+    produto.estoque = estoque;
+    produto.valor = valor;
+
+    await this.produtosRepository.save(produto);
+
+    const produtoAtualizado = await this.produtosRepository.findOne({
+      idProduto,
+    });
+
+    return produtoAtualizado;
+  }
 }
 
 export { ProdutosService };

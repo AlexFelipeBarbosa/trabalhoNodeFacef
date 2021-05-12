@@ -89,7 +89,7 @@ class ClientesController {
         });
       }
     } catch (error) {
-      return response.status(404).json({
+      return response.status(400).json({
         message: error.message,
       });
     }
