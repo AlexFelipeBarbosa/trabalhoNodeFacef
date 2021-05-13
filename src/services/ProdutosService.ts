@@ -73,6 +73,18 @@ class ProdutosService {
 
     return produtos;
   }
+
+  async findByID(idProduto: number) {
+    const produto = await this.produtosRepository.findOne({
+      idProduto,
+    });
+
+    if (!produto) {
+      throw new Error("Produto não identificado!!!");
+    }
+
+    return produto;
+  }
 }
 
 export { ProdutosService };
