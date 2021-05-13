@@ -67,6 +67,24 @@ class ProdutosService {
 
     return produtoAtualizado;
   }
+
+  async findAll() {
+    const produtos = await this.produtosRepository.find();
+
+    return produtos;
+  }
+
+  async findByID(idProduto: number) {
+    const produto = await this.produtosRepository.findOne({
+      idProduto,
+    });
+
+    if (!produto) {
+      throw new Error("Produto não identificado!!!");
+    }
+
+    return produto;
+  }
 }
 
 export { ProdutosService };

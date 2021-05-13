@@ -54,6 +54,28 @@ class ProdutosController {
       });
     }
   }
+
+  async findAll(request: Request, response: Response) {
+    const produtosService = new ProdutosService();
+
+    const produtos = await produtosService.findAll();
+
+    return response.json(produtos);
+  }
+
+  async findByID(request: Request, response: Response) {
+    const { idProduto } = request.params;
+    const produtosService = new ProdutosService();
+
+    try {
+      const produto = await produtosService.findByID(Number(idProduto));
+      return response.json(produto);
+    } catch (error) {
+      return response.status(400).json({
+        message: error.message,
+      });
+    }
+  }
 }
 
 export { ProdutosController };
