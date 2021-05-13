@@ -67,6 +67,12 @@ class ProdutosService {
 
     return produtoAtualizado;
   }
+
+  async findAll() {
+    const produtos = await this.produtosRepository.find();
+
+    return produtos;
+  }
 }
 
 export { ProdutosService };

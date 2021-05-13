@@ -17,5 +17,6 @@ routes.get("/clientes/:idCliente", clientesController.findByID);
 // Rotas de Produtos
 routes.post("/produtos", produtosController.create);
 routes.put("/produtos/:idProduto", produtosController.update);
+routes.get("/produtos", produtosController.findAll);
 
 export { routes };
