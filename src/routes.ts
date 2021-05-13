@@ -20,4 +20,6 @@ routes.put("/produtos/:idProduto", produtosController.update);
 routes.get("/produtos", produtosController.findAll);
 routes.get("/produtos/:idProduto", produtosController.findByID);
 
+// Rotas de Vendas
+
 export { routes };
