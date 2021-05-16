@@ -20,9 +20,6 @@ class Venda {
   @Column()
   valorTotal: number;
 
-  @Column()
-  formaPagamento: string;
-
   @CreateDateColumn()
   dataVenda: Date;
 }
