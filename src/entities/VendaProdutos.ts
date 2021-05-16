@@ -12,7 +12,7 @@ class VendaProduto {
 
   @JoinColumn({ name: "idProduto" })
   @ManyToOne(() => Produto)
-  idProduto: Produto;
+  idProduto: number;
 
   @Column()
   valor: number;
