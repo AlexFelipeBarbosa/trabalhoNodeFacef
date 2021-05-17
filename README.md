@@ -1,6 +1,6 @@
 # 🚀 Alex Felipe Barbosa
 
-## Trabalho do Modulo de Node.js da Pós em Desenvolvimento da Unifacef
+## Trabalho do Modulo de Node.js da Pós em Desenvolvimento Web da Unifacef
 
 ## 👨‍ Professor: Matheus Oliveira
 
@@ -24,67 +24,67 @@ yarn dev
 
 ### :dart: EndPoints:
 
-# Cadastrar Cliente
+### Cadastrar Cliente
 
-post: localhost:3333/clientes
+post: http://localhost:3333/clientes
 <img alt="cadastrar_cliente" src="https://raw.githubusercontent.com/alexfelipebarbosa/trabalhonodefacef/main/assets/Cliente_post.gif"> <br/>
 
-# Atualizar Cliente
+### Atualizar Cliente
 
-put: localhost:3333/clientes/:idCliente
+put: http://localhost:3333/clientes/:idCliente
 <img alt="atualizar_cliente" src="https://raw.githubusercontent.com/alexfelipebarbosa/trabalhonodefacef/main/assets/Cliente_put.gif"> <br/>
 
-# Consultar Cliente
+### Consultar Cliente
 
-get: localhost:3333/clientes
+get: http://localhost:3333/clientes
 <img alt="consultar_cliente" src="https://raw.githubusercontent.com/alexfelipebarbosa/trabalhonodefacef/main/assets/Cliente_get.gif"> <br/>
 
-# Consultar Cliente (email)
+### Consultar Cliente (email)
 
-get: localhost:3333/clientes/email
+get: http://localhost:3333/clientes/email
 <img alt="consultar_email" src="https://raw.githubusercontent.com/alexfelipebarbosa/trabalhonodefacef/main/assets/Cliente_get_email.gif"> <br/>
 
-# Consultar Cliente (id)
+### Consultar Cliente (id)
 
-get: localhost:3333/clientes/:idCliente
+get: http://localhost:3333/clientes/:idCliente
 <img alt="consultar_cliente_id" src="https://raw.githubusercontent.com/alexfelipebarbosa/trabalhonodefacef/main/assets/Cliente_get_id.gif"> <br/>
 
-# Cadastrar Produto
+### Cadastrar Produto
 
-post: localhost:3333/produtos
+post: http://localhost:3333/produtos
 <img alt="cadastrar_produto" src="https://raw.githubusercontent.com/alexfelipebarbosa/trabalhonodefacef/main/assets/Produto_post.gif"> <br/>
 
-# Atualizar Produto
+### Atualizar Produto
 
-put: localhost:3333/produtos/:idProduto
+put: http://localhost:3333/produtos/:idProduto
 <img alt="atualizar_produto" src="https://raw.githubusercontent.com/alexfelipebarbosa/trabalhonodefacef/main/assets/Produto_put.gif"> <br/>
 
-# Consultar Produtos
+### Consultar Produtos
 
-get: localhost:3333/produtos
+get:  http://localhost:3333/produtos
 <img alt="consultar_produto" src="https://raw.githubusercontent.com/alexfelipebarbosa/trabalhonodefacef/main/assets/Produto_get.gif"> <br/>
 
-# Consultar Produto (id)
+### Consultar Produto (id)
 
-get: localhost:3333/produtos/:idProduto
+get:  http://localhost:3333/produtos/:idProduto
 <img alt="consultar_produto_id" src="https://raw.githubusercontent.com/alexfelipebarbosa/trabalhonodefacef/main/assets/Produto_get_id.gif"> <br/>
 
-# Realizar uma Venda
+### Realizar uma Venda
 
-post: localhost:3333/vendas
+post: http://localhost:3333/vendas
 <img alt="realizar_venda" src="https://raw.githubusercontent.com/alexfelipebarbosa/trabalhonodefacef/main/assets/Venda_post.gif"> <br/>
 
-# Consultar as Vendas
+### Consultar as Vendas
 
-get: localhost:3333/vendas
+get: http://localhost:3333/vendas
 <img alt="consultar_vendas" src="https://raw.githubusercontent.com/alexfelipebarbosa/trabalhonodefacef/main/assets/Venda_get.gif"> <br/>
 
-# Consultar os Produtos de uma Venda
+### Consultar os Produtos de uma Venda
 
-get: localhost:3333/vendas/produtos/:idVenda
+get: http://localhost:3333/vendas/produtos/:idVenda
 <img alt="consultar_vendas_produtos" src="https://raw.githubusercontent.com/alexfelipebarbosa/trabalhonodefacef/main/assets/Venda_get_idVenda.gif"> <br/>
 
-### :man: Alex Felipe Barbosa
+## :man: Alex Felipe Barbosa
 
 ---
 
